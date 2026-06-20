@@ -34,9 +34,10 @@ class Font:
         info = font.info
 
         year = datetime.date.today().year
-        info.copyright = (u"Copyright © 2012-%s " % year +
-                          u"The Libertinus Project Authors.")
-        info.openTypeNameManufacturerURL = "https://github.com/alerque/libertinus"
+        info.copyright = (u"Copyright © 2026-%s uwni. " % year +
+                          u"Copyright © 2012-2024 The Libertinus Project Authors. "
+                          u"Libertina is a modified version of Libertinus.")
+        info.openTypeNameManufacturerURL = "https://github.com/uwni/libertina"
 
     def _draw_over_under_line(self, name, widths):
         font = self._font

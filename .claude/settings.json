@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"from sfdLib.parser import MATH_KEY; print\\(MATH_KEY\\)\")",
+      "Read(//opt/homebrew/lib/**)",
+      "Bash(python3 -c ' *)",
+      "Bash(fontforge --version)",
+      "Bash(fontforge -script tools/scale_math_italic.py)",
+      "Bash(grep -A5 \"^StartChar: u1D434$\" /Users/choei/Src/libertinus/sources/LibertinusMath-Regular.sfd.bak)",
+      "Bash(grep -A5 \"^StartChar: u1D434$\" /Users/choei/Src/libertinus/sources/LibertinusMath-Regular.sfd)",
+      "Bash(grep -A8 \"^StartChar: u1D453$\" /Users/choei/Src/libertinus/sources/LibertinusMath-Regular.sfd.bak)",
+      "Bash(grep -A8 \"^StartChar: u1D453$\" /Users/choei/Src/libertinus/sources/LibertinusMath-Regular.sfd)",
+      "Bash(grep -A8 \"^StartChar: u1D434$\" /Users/choei/Src/libertinus/sources/LibertinusMath-Regular.sfd.bak)",
+      "Bash(grep -A8 \"^StartChar: u1D434$\" /Users/choei/Src/libertinus/sources/LibertinusMath-Regular.sfd)",
+      "Bash(grep -A10 \"^StartChar: u1D453$\" /Users/choei/Src/libertinus/sources/LibertinusMath-Regular.sfd.bak)",
+      "Bash(grep -A10 \"^StartChar: u1D453$\" /Users/choei/Src/libertinus/sources/LibertinusMath-Regular.sfd)",
+      "Bash(grep -A7 \"^StartChar: u1D434$\" /Users/choei/Src/libertinus/sources/LibertinusMath-Regular.sfd.bak)",
+      "Bash(grep -A7 \"^StartChar: u1D434$\" /Users/choei/Src/libertinus/sources/LibertinusMath-Regular.sfd)",
+      "Bash(grep -A7 \"^StartChar: u1D453$\" /Users/choei/Src/libertinus/sources/LibertinusMath-Regular.sfd.bak)",
+      "Bash(grep -A7 \"^StartChar: u1D453$\" /Users/choei/Src/libertinus/sources/LibertinusMath-Regular.sfd)",
+      "Bash(git -C /Users/choei/Src/libertinus config user.name)",
+      "Bash(git -C /Users/choei/Src/libertinus config user.email)",
+      "Bash(fontforge -script tools/rename_to_libertina.py)",
+      "Bash(git -C /Users/choei/Src/libertinus status)",
+      "Bash(git -C /Users/choei/Src/libertinus mv documentation/libertinus.css documentation/libertina.css)",
+      "Bash(git -C /Users/choei/Src/libertinus status --short)"
+    ]
+  }
+}

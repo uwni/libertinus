@@ -57,7 +57,7 @@ install-dist-$(PROJECT): $(DOCSDIR)/sample.pdf $(DOCSDIR)/waterfalls.pdf | previ
 	install -Dm644 -t "$(DISTDIR)/" preview.svg AUTHORS.txt CONTRIBUTING.md CONTRIBUTORS.txt FONTLOG.txt
 	install -Dm644 -t "$(DISTDIR)/$(DOCSDIR)" $(DOCSDIR)/*.pdf $(DOCSDIR)/*.md $(DOCSDIR)/*.css
 
-CTAN_NAME = libertinus-fonts
+CTAN_NAME = libertina-fonts
 
 .PHONY: dist-ctan
 dist-ctan: install-dist

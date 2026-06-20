@@ -3,165 +3,165 @@
  * @date 2021-01-17
  */
 /**
- * Libertinus Font Faces
+ * Libertina Font Faces
  * =====================
  */
 /**
- * Libertinus Serif
+ * Libertina Serif
  * ----------------
  */
-@font-face /* Libertinus Serif Regular Upright */
+@font-face /* Libertina Serif Regular Upright */
 {
-	font-family: Libertinus Serif/*, Libertinus*/;
+	font-family: Libertina Serif/*, Libertina*/;
 	font-style:  normal;
 	font-weight: 400;
-	src: local(Libertinus Serif), local(Libertinus Serif Regular), local(Libertinus), 
+	src: local(Libertina Serif), local(Libertina Serif Regular), local(Libertina), 
 		/* local(Linux Libertine), */
-		url("static/OTF/LibertinusSerif-Regular.otf") format("opentype"), 
-		url("static/WOFF2/LibertinusSerif-Regular.woff2") format("woff2");
+		url("static/OTF/LibertinaSerif-Regular.otf") format("opentype"), 
+		url("static/WOFF2/LibertinaSerif-Regular.woff2") format("woff2");
 }
-@font-face /* Libertinus Serif Regular Italic */
+@font-face /* Libertina Serif Regular Italic */
 {
-	font-family: Libertinus Serif/*, Libertinus*/;
+	font-family: Libertina Serif/*, Libertina*/;
 	font-style:  italic;
 	font-weight: 400;
-	src: local(Libertinus Serif Italic), 
-		url("static/OTF/LibertinusSerif-Italic.otf") format("opentype"), 
-		url("static/WOFF2/LibertinusSerif-Italic.woff2") format("woff2");
+	src: local(Libertina Serif Italic), 
+		url("static/OTF/LibertinaSerif-Italic.otf") format("opentype"), 
+		url("static/WOFF2/LibertinaSerif-Italic.woff2") format("woff2");
 }
-@font-face /* Libertinus Serif Semibold Upright */
+@font-face /* Libertina Serif Semibold Upright */
 {
-	font-family: Libertinus Serif/*, Libertinus*/;
+	font-family: Libertina Serif/*, Libertina*/;
 	font-style:  normal;
 	font-weight: 600;
-	src: local(Libertinus Serif), local(Libertinus Serif Semibold), 
-		url("static/OTF/LibertinusSerif-Semibold.otf") format("opentype"), 
-		url("static/WOFF2/LibertinusSerif-Semibold.woff2") format("woff2");
+	src: local(Libertina Serif), local(Libertina Serif Semibold), 
+		url("static/OTF/LibertinaSerif-Semibold.otf") format("opentype"), 
+		url("static/WOFF2/LibertinaSerif-Semibold.woff2") format("woff2");
 }
-@font-face /* Libertinus Serif Semibold Italic */
+@font-face /* Libertina Serif Semibold Italic */
 {
-	font-family: Libertinus Serif/*, Libertinus*/;
+	font-family: Libertina Serif/*, Libertina*/;
 	font-style:  italic;
 	font-weight: 600;
-	src: local(Libertinus Serif Semibold Italic), 
-		url("static/OTF/LibertinusSerif-SemiboldItalic.otf") format("opentype"), 
-		url("static/WOFF2/LibertinusSerif-SemiboldItalic.woff2") format("woff2");
+	src: local(Libertina Serif Semibold Italic), 
+		url("static/OTF/LibertinaSerif-SemiboldItalic.otf") format("opentype"), 
+		url("static/WOFF2/LibertinaSerif-SemiboldItalic.woff2") format("woff2");
 }
-@font-face /* Libertinus Serif Bold Upright */
+@font-face /* Libertina Serif Bold Upright */
 {
-	font-family: Libertinus Serif/*, Libertinus*/;
+	font-family: Libertina Serif/*, Libertina*/;
 	font-style:  normal;
 	font-weight: 700;
-	src: local(Libertinus Serif Bold), 
-		url("static/OTF/LibertinusSerif-Bold.otf") format("opentype"), 
-		url("static/WOFF2/LibertinusSerif-Bold.woff2") format("woff2");
+	src: local(Libertina Serif Bold), 
+		url("static/OTF/LibertinaSerif-Bold.otf") format("opentype"), 
+		url("static/WOFF2/LibertinaSerif-Bold.woff2") format("woff2");
 }
-@font-face /* Libertinus Serif Bold Italic */
+@font-face /* Libertina Serif Bold Italic */
 {
-	font-family: Libertinus Serif/*, Libertinus*/;
+	font-family: Libertina Serif/*, Libertina*/;
 	font-style:  italic;
 	font-weight: 700;
-	src: local(Libertinus Serif Bold Italic), 
-		url("static/OTF/LibertinusSerif-BoldItalic.otf") format("opentype"), 
-		url("static/WOFF2/LibertinusSerif-BoldItalic.woff2") format("woff2");
+	src: local(Libertina Serif Bold Italic), 
+		url("static/OTF/LibertinaSerif-BoldItalic.otf") format("opentype"), 
+		url("static/WOFF2/LibertinaSerif-BoldItalic.woff2") format("woff2");
 }
 /**
- * ### Libertinus Serif Display ###
+ * ### Libertina Serif Display ###
  */
-@font-face /* Libertinus Serif Display */
+@font-face /* Libertina Serif Display */
 {
-	font-family: Libertinus /*Serif*/ Display/*, Libertinus*/;
+	font-family: Libertina /*Serif*/ Display/*, Libertina*/;
 	font-style:  normal;
 	font-weight: 400;
-	src: local(Libertinus Serif Display), 
-		url("static/OTF/LibertinusSerifDisplay-Regular.otf") format("opentype"), 
-		url("static/WOFF2/LibertinusSerifDisplay-Regular.woff2") format("woff2");
+	src: local(Libertina Serif Display), 
+		url("static/OTF/LibertinaSerifDisplay-Regular.otf") format("opentype"), 
+		url("static/WOFF2/LibertinaSerifDisplay-Regular.woff2") format("woff2");
 }
 /**
- * ### Libertinus Serif Initials ###
+ * ### Libertina Serif Initials ###
  */
-@font-face /* Libertinus Serif Initials */
+@font-face /* Libertina Serif Initials */
 {
-	font-family: Libertinus /*Serif*/ Initials/*, Libertinus*/;
+	font-family: Libertina /*Serif*/ Initials/*, Libertina*/;
 	font-style:  normal;
 	font-weight: 400;
-	src: local(Libertinus Serif Initials), 
-		url("static/OTF/LibertinusSerifInitials-Regular.otf") format("opentype"), 
-		url("static/WOFF2/LibertinusSerifInitials-Regular.woff2") format("woff2");
+	src: local(Libertina Serif Initials), 
+		url("static/OTF/LibertinaSerifInitials-Regular.otf") format("opentype"), 
+		url("static/WOFF2/LibertinaSerifInitials-Regular.woff2") format("woff2");
 }
 /**
- * Libertinus Sans
+ * Libertina Sans
  * ---------------
  */
-@font-face /* Libertinus Sans Regular Upright */
+@font-face /* Libertina Sans Regular Upright */
 {
-	font-family: Libertinus Sans/*, Biolinum*/;
+	font-family: Libertina Sans/*, Biolinum*/;
 	font-style:  normal;
 	font-weight: 400;
-	src: local(Libertinus Sans), 
-		url("static/OTF/LibertinusSans-Regular.otf") format("opentype"), 
-		url("static/WOFF2/LibertinusSans-Regular.woff2") format("woff2");
+	src: local(Libertina Sans), 
+		url("static/OTF/LibertinaSans-Regular.otf") format("opentype"), 
+		url("static/WOFF2/LibertinaSans-Regular.woff2") format("woff2");
 }
-@font-face /* Libertinus Sans Regular Italic */
+@font-face /* Libertina Sans Regular Italic */
 {
-	font-family: Libertinus Sans/*, Biolinum*/;
+	font-family: Libertina Sans/*, Biolinum*/;
 	font-style:  italic;
 	font-weight: 400;
-	src: local(Libertinus Sans Italic), 
-		url("static/OTF/LibertinusSans-Italic.otf") format("opentype"), 
-		url("static/WOFF2/LibertinusSans-Italic.woff2") format("woff2");
+	src: local(Libertina Sans Italic), 
+		url("static/OTF/LibertinaSans-Italic.otf") format("opentype"), 
+		url("static/WOFF2/LibertinaSans-Italic.woff2") format("woff2");
 }
-@font-face /* Libertinus Sans Bold Upright */
+@font-face /* Libertina Sans Bold Upright */
 {
-	font-family: Libertinus Sans/*, Biolinum*/;
+	font-family: Libertina Sans/*, Biolinum*/;
 	font-style:  normal;
 	font-weight: 700;
-	src: local(Libertinus Sans Bold), 
-		url("static/OTF/LibertinusSans-Bold.otf") format("opentype"), 
-		url("static/WOFF2/LibertinusSans-Bold.woff2") format("woff2");
+	src: local(Libertina Sans Bold), 
+		url("static/OTF/LibertinaSans-Bold.otf") format("opentype"), 
+		url("static/WOFF2/LibertinaSans-Bold.woff2") format("woff2");
 }
 /**
- * Libertinus Math
+ * Libertina Math
  */
-@font-face /* Libertinus Serif Math */
+@font-face /* Libertina Serif Math */
 {
-	font-family: Libertinus /*Serif*/ Math;
+	font-family: Libertina /*Serif*/ Math;
 	font-style:  normal;
 	font-weight: 400;
-	src: local(Libertinus Math), 
-		url("static/OTF/LibertinusMath-Regular.otf") format("opentype"), 
-		url("static/WOFF2/LibertinusMath-Regular.woff2") format("woff2");
+	src: local(Libertina Math), 
+		url("static/OTF/LibertinaMath-Regular.otf") format("opentype"), 
+		url("static/WOFF2/LibertinaMath-Regular.woff2") format("woff2");
 }
 /**
- * Libertinus Mono
+ * Libertina Mono
  */
-@font-face /* Libertinus Serif Mono */
+@font-face /* Libertina Serif Mono */
 {
-	font-family: Libertinus /*Serif*/ Mono;
+	font-family: Libertina /*Serif*/ Mono;
 	font-style:  normal;
 	font-weight: 400;
-	src: local(Libertinus Mono), 
-		url("static/OTF/LibertinusMono-Regular.otf") format("opentype"), 
-		url("static/WOFF2/LibertinusMono-Regular.woff2") format("woff2");
+	src: local(Libertina Mono), 
+		url("static/OTF/LibertinaMono-Regular.otf") format("opentype"), 
+		url("static/WOFF2/LibertinaMono-Regular.woff2") format("woff2");
 }
 /**
- * Libertinus Keyboard
+ * Libertina Keyboard
  */
-@font-face /* Libertinus Serif Keyboard */
+@font-face /* Libertina Serif Keyboard */
 {
-	font-family: Libertinus Keyboard;
+	font-family: Libertina Keyboard;
 	font-style:  normal;
 	font-weight: 400;
-	src: local(Libertinus Keyboard), 
-		url("static/OTF/LibertinusKeyboard-Regular.otf") format("opentype"), 
-		url("static/WOFF2/LibertinusKeyboard-Regular.woff2") format("woff2");
+	src: local(Libertina Keyboard), 
+		url("static/OTF/LibertinaKeyboard-Regular.otf") format("opentype"), 
+		url("static/WOFF2/LibertinaKeyboard-Regular.woff2") format("woff2");
 }
 
 /**
  * Standard OpenType Features
  * ==========================
  *
- * Libertinus supports several OpenType features, 
+ * Libertina supports several OpenType features, 
  * some are enabled by default (`-`) others have to be opted in (`+`), 
  * most can be accessed by high-level CSS properties and values:
  *
@@ -243,7 +243,7 @@
  * Numerals: `-tnum`, `+pnum`, `-lnum`, `+onum`, `+pnum+onum`
  * ----------------------------------------------------------
  *
- * Except for Libertinus Math, the standard digits can be forced
+ * Except for Libertina Math, the standard digits can be forced
  * to _old-style_ forms (with ascenders and descenders) with `onum` (`.taboldstyle`),
  * to default _lining_ forms with `lnum`, 
  * to _proportional_ forms with `pnum` (`.fitted`),
@@ -268,12 +268,12 @@
  */
 
 @font-feature-values
-	Libertinus, 
-	Libertinus Serif, 
-	Libertinus Sans, 
-	Libertinus Math, 
-	Libertinus Mono, 
-	Libertinus Keyboard 
+	Libertina, 
+	Libertina Serif, 
+	Libertina Sans, 
+	Libertina Math, 
+	Libertina Mono, 
+	Libertina Keyboard 
 {
 	/**
 	 * Stylistic alternates: `+salt`
