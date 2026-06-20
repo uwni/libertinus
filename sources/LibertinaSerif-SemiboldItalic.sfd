@@ -1,7 +1,7 @@
 SplineFontDB: 3.2
-FontName: LibertinusSerif-SemiboldItalic
-FullName: Libertinus Serif Semibold Italic
-FamilyName: Libertinus Serif Semibold
+FontName: LibertinaSerif-SemiboldItalic
+FullName: Libertina Serif Semibold Italic
+FamilyName: Libertina Serif Semibold
 Weight: Semibold
 UComments: "2003-8-29: Created.+AAoA-2004-7-25: v(1.0) release candidate+AAoA-2005-12-28: v(1.1.0) stable+AAoA-2006-01-01: v(2.0.0) stable+AAoA-2006-09-05: v(2.2.0) stable"
 Version: 5.1.2
@@ -20,6 +20,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1162161130
+ModificationTime: 1781930715
 PfmFamily: 17
 TTFWeight: 600
 TTFWidth: 5
@@ -48,10 +49,13 @@ Lookup: 260 0 0 "'mark' Mark positioning" { "'mark' Right"  "'mark' Top Punkt"  
 Lookup: 260 1 0 "markHebrewMarkpositioning" { "markHebrewMarkpositioning subtable"  } ['mark' ('hebr' <'dflt' > ) ]
 MarkAttachClasses: 1
 DEI: 91125
-LangName: 1033 "" "" "Italic" "" "" "" "" "" "Caleb Maclennan" "Philipp H. Poll, Khaled Hosny" "" "https://github.com/alerque/libertinus" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1" "https://scripts.sil.org/OFL" "" "Libertinus Serif" "Semibold Italic"
+LangName: 1033 "" "" "Italic" "" "" "" "" "" "Caleb Maclennan" "uwni, Philipp H. Poll, Khaled Hosny" "" "https://github.com/uwni/libertina" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1" "https://scripts.sil.org/OFL" "" "Libertinus Serif" "Semibold Italic"
 Encoding: UnicodeFull
 UnicodeInterp: none
 NameList: AGL For New Fonts
+DisplaySize: -48
+AntiAlias: 1
+FitToEm: 0
 BeginPrivate: 6
 BlueValues 47 [-20 0 434 447 460 474 580 581 645 662 696 705]
 OtherBlues 11 [-239 -219]

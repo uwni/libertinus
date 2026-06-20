@@ -1,7 +1,7 @@
 SplineFontDB: 3.2
-FontName: LibertinusMono-Regular
-FullName: Libertinus Mono Regular
-FamilyName: Libertinus Mono
+FontName: LibertinaMono-Regular
+FullName: Libertina Mono Regular
+FamilyName: Libertina Mono
 Weight: Regular
 UComments: "2003-08-29: Created.+AAoA-2004-07-25: v(1.0) release candidate+AAoA-2005-12-28: v(1.1.0)stable+AAoA-2006-05-01: v(2.0.0)stable+AAoA-2007-01-10: v(2.3.0)stable"
 Version: 5.1.7
@@ -20,6 +20,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1155510122
+ModificationTime: 1781930715
 PfmFamily: 49
 TTFWeight: 400
 TTFWidth: 5
@@ -54,12 +55,15 @@ ShortTable: cvt  2
   68
   1297
 EndShort
-LangName: 1033 "" "" "" "" "" "" "" "" "Caleb Maclennan" "Philipp H. Poll, Khaled Hosny" "" "https://github.com/alerque/libertinus" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1" "https://scripts.sil.org/OFL"
-OtfFeatName: 'ss01' 1033 "Low diaeresis 'A', 'E', 'O'"
+LangName: 1033 "" "" "" "" "" "" "" "" "Caleb Maclennan" "uwni, Philipp H. Poll, Khaled Hosny" "" "https://github.com/uwni/libertina" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1" "https://scripts.sil.org/OFL"
 OtfFeatName: 'ss07' 1033 "Swap 'Eng' forms"
+OtfFeatName: 'ss01' 1033 "Low diaeresis 'A', 'E', 'O'"
 Encoding: UnicodeFull
 UnicodeInterp: none
 NameList: AGL For New Fonts
+DisplaySize: -48
+AntiAlias: 1
+FitToEm: 0
 BeginPrivate: 10
 BlueValues 31 [-12 0 480 490 613 626 688 698]
 OtherBlues 11 [-238 -227]

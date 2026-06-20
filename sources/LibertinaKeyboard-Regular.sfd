@@ -1,7 +1,7 @@
 SplineFontDB: 3.2
-FontName: LibertinusKeyboard-Regular
-FullName: Libertinus Keyboard Regular
-FamilyName: Libertinus Keyboard
+FontName: LibertinaKeyboard-Regular
+FullName: Libertina Keyboard Regular
+FamilyName: Libertina Keyboard
 Weight: Regular
 UComments: "2003-08-29: Created.+AAoA-2004-07-25: v(1.0) release candidate+AAoA-2005-12-28: v(1.1.0) stable+AAoA-2006-01-01: v(2.0.0) stable+AAoA-2006-09-05: v(2.2.0) stable+AAoA-2006-12-04: v(2.3.0) stable+AAoA-2007-03-11: v(2.4.0) stable+AAoA-2007-12-00: v(2.7.0) stable+AAoA-2008-06-00: v(2.8.14) stable+AAoA"
 Version: 0.6.1
@@ -21,6 +21,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1156455862
+ModificationTime: 1781930714
 PfmFamily: 33
 TTFWeight: 700
 TTFWidth: 5
@@ -46,11 +47,14 @@ OS2Vendor: 'QUE '
 Lookup: 4 0 1 "'liga' Standardligaturen" { "'liga' Standardligaturen 1"  } ['liga' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'TRK ' 'dflt' > ) ]
 MarkAttachClasses: 1
 DEI: 91125
-LangName: 1033 "" "" "" "" "" "" "" "" "Caleb Maclennan" "Philipp H. Poll, Khaled Hosny" "" "https://github.com/alerque/libertinus" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1" "https://scripts.sil.org/OFL"
+LangName: 1033 "" "" "" "" "" "" "" "" "Caleb Maclennan" "uwni, Philipp H. Poll, Khaled Hosny" "" "https://github.com/uwni/libertina" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1" "https://scripts.sil.org/OFL"
 GaspTable: 3 8 2 17 1 65535 3 0
 Encoding: UnicodeFull
 UnicodeInterp: none
 NameList: AGL For New Fonts
+DisplaySize: -48
+AntiAlias: 1
+FitToEm: 0
 BeginPrivate: 9
 BlueValues 39 [29 41 361 374 460 474 524 537 555 578]
 OtherBlues 11 [-238 -227]
