@@ -23,7 +23,29 @@
       "Bash(fontforge -script tools/rename_to_libertina.py)",
       "Bash(git -C /Users/choei/Src/libertinus status)",
       "Bash(git -C /Users/choei/Src/libertinus mv documentation/libertinus.css documentation/libertina.css)",
-      "Bash(git -C /Users/choei/Src/libertinus status --short)"
+      "Bash(git -C /Users/choei/Src/libertinus status --short)",
+      "Bash(git show *)",
+      "Read(//tmp/**)",
+      "Bash(git show a6487570b8fdcfa69557744f5e5c5d044de0a9db:sources/LibertinusMath-Regular.sfd > /tmp/LibertinusMath-original.sfd *)",
+      "Bash(grep -A4 \"^StartChar: uni210E$\" /Users/choei/Src/libertinus/sources/LibertinaMath-Regular.sfd.bak)",
+      "Bash(grep -A4 \"^StartChar: uni210E$\" /Users/choei/Src/libertinus/sources/LibertinaMath-Regular.sfd)",
+      "Bash(grep -A5 \"^StartChar: u1D468$\" /Users/choei/Src/libertinus/sources/LibertinaMath-Regular.sfd.bak)",
+      "Bash(grep -A5 \"^StartChar: u1D468$\" /Users/choei/Src/libertinus/sources/LibertinaMath-Regular.sfd)",
+      "Bash(gh issue *)",
+      "Bash(find ~/Src/newcm -maxdepth 2 -not -path '*/.git/*' | sort | head -40)",
+      "Read(//Users/choei/Src/newcm/**)",
+      "Bash(grep -A4 \"^StartChar: f$\" ~/Src/newcm/sfd/NewCM10-Italic.sfd)",
+      "Bash(grep -A4 \"^StartChar: u1D453$\" ~/Src/newcm/sfd/NewCMMath-Regular.sfd)",
+      "Bash(python3 -)",
+      "Bash(sort -t. -k2)",
+      "Bash(fontforge -script tools/generate_math_ssty.py)",
+      "Bash(fontforge -script -)",
+      "Bash(pip3 install *)",
+      "Bash(python3 tools/build.py --input sources/LibertinaMath-Regular.sfd --output build/LibertinaMath-Regular.otf --feature-file sources/features/gsub.fea)",
+      "Bash(typst compile *)"
+    ],
+    "additionalDirectories": [
+      "/private/tmp"
     ]
   }
 }
