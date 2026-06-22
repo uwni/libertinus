@@ -42,7 +42,17 @@
       "Bash(fontforge -script -)",
       "Bash(pip3 install *)",
       "Bash(python3 tools/build.py --input sources/LibertinaMath-Regular.sfd --output build/LibertinaMath-Regular.otf --feature-file sources/features/gsub.fea)",
-      "Bash(typst compile *)"
+      "Bash(typst compile *)",
+      "Bash(pdftotext /tmp/test_ssty2.pdf -)",
+      "Bash(grep -v \"^$\")",
+      "Bash(gh repo *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d['description']\\)\")",
+      "Bash(gh api *)",
+      "Bash(grep -i \"ssty\\\\|\\\\.s[0-9]\\\\|script\\\\|st$\\\\|sts$\")",
+      "Bash(grep -i \"\\\\.ttf$\\\\|\\\\.otf$\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/stipub/stixfonts/master/source/STIXTwoMath.input.ttf\" -o /tmp/STIXTwoMath.ttf)",
+      "Bash(fontforge -script tools/import_ufo_glyphs.py)",
+      "Bash(gh pr *)"
     ],
     "additionalDirectories": [
       "/private/tmp"

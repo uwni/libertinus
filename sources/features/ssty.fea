@@ -1,7 +1,10 @@
 feature ssty {
   # Prime symbols (single substitution)
-  sub second by second.ssty1;
-  sub uni2035 by uni2035.ssty1;
+  sub uni2037 by uni2037.ssty1;
+  sub uni2036 by uni2036.ssty1;
+  sub uni2057 by uni2057.ssty1;
+  sub uni2034 by uni2034.ssty1;
+  sub minute by minute.ssty1;
 
   # Math letters, digits, operators: level 1 = .st, level 2 = .sts
   sub exclam from [exclam.st exclam.sts];
@@ -331,14 +334,9 @@ feature ssty {
   sub dagger from [dagger.st dagger.sts];
   sub daggerdbl from [daggerdbl.st daggerdbl.sts];
   sub perthousand from [perthousand.st perthousand.sts];
-  sub minute from [minute.st minute.sts];
-  sub uni2034 from [uni2034.st uni2034.sts];
-  sub uni2036 from [uni2036.st uni2036.sts];
-  sub uni2037 from [uni2037.st uni2037.sts];
   sub guilsinglleft from [guilsinglleft.st guilsinglleft.sts];
   sub guilsinglright from [guilsinglright.st guilsinglright.sts];
   sub uni203D from [uni203D.st uni203D.sts];
-  sub uni2057 from [uni2057.st uni2057.sts];
   sub Euro from [Euro.st Euro.sts];
   sub uni210C from [uni210C.st uni210C.sts];
   sub uni210E from [uni210E.st uni210E.sts];

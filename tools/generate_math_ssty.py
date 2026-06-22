@@ -62,7 +62,31 @@ SFD_IN   = os.path.join(SOURCES, "LibertinusMath-Regular.sfd")
 SFD_OUT  = os.path.join(SOURCES, "LibertinaMath-Regular.sfd")
 SSTY_FEA = os.path.join(SOURCES, "features", "ssty.fea")
 
-BASE_SCALE = 1.07  # italic base horizontal widening
+# Glyphs to import from companion UFO sources before any processing.
+# Format: (ufo_path, src_glyph_name, dst_math_glyph_name)
+# The outline and advance are taken from the UFO; ItalicCorrection and
+# TopAccentHorizontal are preserved from the existing math glyph (since the
+# italic angle is unchanged).  These glyphs are then processed normally by
+# subsequent steps (base scaling, ssty generation, etc.).
+GLYPH_IMPORTS = [
+    (os.path.join(SOURCES, "LibertinaSerif-Italic.ufo"),     "v",       "u1D463"),  # 𝑣
+    (os.path.join(SOURCES, "LibertinaSerif-Italic.ufo"),     "w",       "u1D464"),  # 𝑤
+    (os.path.join(SOURCES, "LibertinaSerif-BoldItalic.ufo"), "v",       "u1D497"),  # 𝒗
+    (os.path.join(SOURCES, "LibertinaSerif-BoldItalic.ufo"), "w",       "u1D498"),  # 𝒘
+    # (os.path.join(SOURCES, "LibertinaSerif-Italic.sfd"),     "uni0261", "u1D454"),  # 𝑔
+    # u1D488 (bold italic g) skipped: uni0261 not yet in LibertinaSerif-BoldItalic.sfd
+]
+
+BASE_SCALE = 1.05  # italic base horizontal widening
+STS_ST = 0.05
+
+# Constant added to all x-coordinates in ssty variants (units, same as UPM).
+# Turns the proportional scale into a linear function: new_x = w*old_x + tx.
+# LSB and advance both grow by tx; RSB is unaffected (stays w × old_RSB).
+# Derived from NewCM lowercase italic data (差值法):
+#   tx_st ≈ 14,  tx_sts = tx_st + 33 ≈ 47
+SSTY_TX_ST  = 15
+SSTY_TX_STS = SSTY_TX_ST + 20
 
 ITALIC_RANGES = [
     (0x210E,  0x210F),
@@ -74,17 +98,17 @@ ITALIC_RANGES = [
 ]
 
 SSTY_RATIOS = {
-    "math_italic":      (1.089, 1.213),
-    "math_bold_italic": (1.094, 1.223),
-    "latin":            (1.086, 1.219),
-    "math_bold":        (1.076, 1.187),
-    "math_fraktur":     (1.090, 1.200),
-    "math_script":      (1.070, 1.143),
-    "operators":        (1.089, 1.212),
-    "digits_unicode":   (1.075, 1.157),
-    "digits_named":     (1.107, 1.250),
-    "greek":            (1.115, 1.268),
-    "default":          (1.088, 1.211),
+    "math_italic":      1.039,
+    "math_bold_italic": 1.044, 
+    "latin":            1.036, 
+    "math_bold":        1.026, 
+    "math_fraktur":     1.040, 
+    "math_script":      1.020, 
+    "operators":        1.039, 
+    "digits_unicode":   1.025, 
+    "digits_named":     1.057, 
+    "greek":            1.065, 
+    "default":          1.038, 
 }
 
 DIGIT_NAMES = {
@@ -457,10 +481,6 @@ def in_italic_range(cp):
     return any(lo <= cp <= hi for lo, hi in ITALIC_RANGES)
 
 
-def in_italic_range(cp):
-    return any(lo <= cp <= hi for lo, hi in ITALIC_RANGES)
-
-
 def parse_cp(name):
     """Extract Unicode codepoint from a glyph name like u1D434 or uni210E."""
     base = name.split(".")[0]
@@ -535,7 +555,7 @@ def main():
 
     # ── Step 1: open original, rename metadata ────────────────────────────────
     L("── Step 1: rename metadata")
-    f = fontforge.open(SFD_IN)
+    f = fontforge.open(SFD_IN)  # read-only source; never saved back
     f.familyname = f.familyname.replace("Libertinus", "Libertina")
     f.fullname   = f.fullname.replace("Libertinus", "Libertina")
     f.fontname   = f.fontname.replace("Libertinus", "Libertina")
@@ -550,8 +570,37 @@ def main():
     L(f"  fontname   → {f.fontname}")
     L()
 
-    # ── Step 2: scale italic base glyphs ×1.08 ───────────────────────────────
-    L(f"── Step 2: scale italic base glyphs ×{BASE_SCALE}")
+    # ── Step 2: import glyphs from companion SFDs ────────────────────────────
+    if GLYPH_IMPORTS:
+        L("── Step 2: import glyphs from companion SFD")
+        for src_path, src_name, dst_name in GLYPH_IMPORTS:
+            src_font = fontforge.open(src_path)
+            src = src_font[src_name]
+            dst = f[dst_name]
+            old_ic  = dst.italicCorrection   # encodes the italic angle — preserved
+            old_ta  = dst.topaccent
+            dst.clear()
+            pen = dst.glyphPen()
+            src.draw(pen)
+            del pen
+            # Derivation rule: lsb = 20 (fixed).
+            # Invariant: lsb = rsb + ic  →  rsb = lsb - ic = 20 - ic.
+            # IC is preserved (italic angle unchanged); advance follows from ic.
+            shift = 20 - dst.boundingBox()[0]
+            dst.transform(psMat.translate(shift, 0))
+            bb = dst.boundingBox()
+            dst.width            = round(bb[2] + (20 - old_ic))   # ink_right + rsb
+            dst.italicCorrection = old_ic
+            dst.topaccent        = old_ta
+
+            ch = glyph_display_char(f, dst_name)
+            L(f"  {src_name} ({src_path.split('/')[-1]}) → {dst_name} {ch}"
+              f"  adv={dst.width}  lsb={dst.boundingBox()[0]:.1f}")
+            src_font.close()
+        L()
+
+    # ── Step 3: scale italic base glyphs ────────────────────────────────────
+    L(f"── Step 3: scale italic base glyphs ×{BASE_SCALE}")
     base_matrix = psMat.scale(BASE_SCALE, 1.0)
     for g in [g for g in f.glyphs() if is_italic_base(g)]:
         w_before = g.width
@@ -563,8 +612,14 @@ def main():
     # ── Step 3: ssty variants (NewCM coverage) ───────────────────────────────
     L(f"── Step 3: generate ssty  ({len(NEWCM_BASES)} NewCM bases)")
 
+    # Prime symbols have hand-designed .ssty1 glyphs that must not be replaced
+    # by mechanical scaling. Exclude them entirely from ssty processing so their
+    # existing .ssty1 substitutions in ssty.fea remain in effect.
+    SSTY_SKIP = {"minute", "uni2033", "uni2034", "primereversed",
+                 "uni2036", "uni2037", "uni2057"}
+
     present = {g.glyphname for g in f.glyphs()}
-    targets = [b for b in NEWCM_BASES if b in present]
+    targets = [b for b in NEWCM_BASES if b in present and b not in SSTY_SKIP]
     skipped = [b for b in NEWCM_BASES if b not in present]
     L(f"  Present in LibertinaMath: {len(targets)}")
     L(f"  Skipped (not in font):    {len(skipped)}")
@@ -591,7 +646,8 @@ def main():
     cat_counts = defaultdict(int)
     for base in targets:
         cat = classify(base)
-        st_w, sts_w = SSTY_RATIOS.get(cat, SSTY_RATIOS["default"])
+        st_w = SSTY_RATIOS.get(cat, SSTY_RATIOS["default"])
+        sts_w = st_w + STS_ST
         st_y, sts_y = ncm_y(base)
         cat_counts[cat] += 1
         src = f[base]
@@ -610,8 +666,11 @@ def main():
             dest.width            = src.width
             dest.italicCorrection = src.italicCorrection
             dest.topaccent        = src.topaccent
-            # transform() scales width, ItalicCorrection, and TopAccentHorizontal.
-            dest.transform(psMat.scale(w, y))
+            # Linear transform: new_x = w*old_x + tx, new_y = y*old_y.
+            # tx adds fixed breathing room to LSB; advance grows by tx too.
+            tx = SSTY_TX_ST if suffix == ".st" else SSTY_TX_STS
+            dest.transform(psMat.compose(psMat.scale(w, y),
+                                         psMat.translate(tx, 0)))
 
         ch = glyph_display_char(f, base)
         has_y = ncm_y(base) != (1.0, 1.0)
@@ -624,8 +683,8 @@ def main():
     L()
     L("  Per-category summary:")
     for cat, n in sorted(cat_counts.items(), key=lambda x: -x[1]):
-        st_w, sts_w = SSTY_RATIOS.get(cat, SSTY_RATIOS["default"])
-        L(f"    {cat:25} {n:4d}  st×{st_w:.3f}  sts×{sts_w:.3f}")
+        st_w = SSTY_RATIOS.get(cat, SSTY_RATIOS["default"])
+        L(f"    {cat:25} {n:4d}  st×{st_w:.3f}")
     L(f"  Total created: {len(targets)*2} glyphs")
     L()
 
@@ -635,15 +694,16 @@ def main():
     L(f"── Saved {SFD_OUT}")
 
     # ── Rewrite ssty.fea ──────────────────────────────────────────────────────
-    with open(SSTY_FEA) as fh:
-        old_prime_subs = re.findall(r"  sub \S+ by \S+;", fh.read())
     with open(SFD_OUT, encoding="latin-1") as fh:
         sfd_text = fh.read()
     existing = {m.group(1) for m in re.finditer(r"^StartChar: (\S+)$", sfd_text, re.M)}
-    prime_subs = [
-        line for line in old_prime_subs
-        if (ref := re.search(r"by (\S+);", line)) and ref.group(1) in existing
-    ]
+    # Read single-substitution lines from ssty.fea (prime symbols etc.)
+    # and keep only those whose target glyph exists in the output SFD.
+    with open(SSTY_FEA) as fh:
+        prime_subs = [
+            line for line in re.findall(r"  sub \S+ by \S+;", fh.read())
+            if (m := re.search(r"by (\S+);", line)) and m.group(1) in existing
+        ]
 
     fea_lines = ["feature ssty {"]
     if prime_subs:

@@ -1,5 +1,6 @@
 import argparse
 import datetime
+import os
 import ufo2ft
 import ufoLib2
 
@@ -266,8 +267,16 @@ def main():
     parser.add_argument("-f", "--feature-file", required=False)
 
     args = parser.parse_args()
+    os.makedirs(os.path.dirname(args.output) or ".", exist_ok=True)
     font = Font(args.input, args.feature_file)
     font.generate(args.output)
+
+    # Also emit WOFF2 alongside the OTF
+    from fontTools.ttLib import TTFont
+    woff2_output = args.output.replace(".otf", ".woff2")
+    f = TTFont(args.output)
+    f.flavor = "woff2"
+    f.save(woff2_output)
 
 
 if __name__ == "__main__":
